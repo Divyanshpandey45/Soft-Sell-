@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SoftSell - The trusted platform for reselling unused software licenses securely and profitably. Get fair market value for your IT assets.">
+  <meta name="keywords" content="software resale, license buyback, IT asset recovery, software license marketplace, unused software resale">
+  <meta name="author" content="SoftSell">
+  <title>SoftSell | Resell Unused Software Licenses | Secure & Profitable</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #f8fafc;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --white: #ffffff;
+      --gray: #e2e8f0;
+      --success: #10b981;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--secondary);
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    /* Header & Hero */
+    header.hero {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--white);
+      text-align: center;
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    header.hero h1 {
+      font-size: 2.75rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    header.hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--white);
+      color: var(--primary);
+      padding: 0.875rem 2rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .btn-primary {
+      background: var(--white);
+      color: var(--primary);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+      margin-left: 1rem;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Sections */
+    section {
+      padding: 5rem 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    
+    .section-title p {
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Steps */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    
+    .step {
+      flex: 1 1 300px;
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+    
+    .step:hover {
+      transform: translateY(-5px);
+    }
+    
+    .step-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(37, 99, 235, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      color: var(--primary);
+      font-size: 2rem;
+    }
+    
+    .step h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    
+    .step p {
+      color: var(--text-light);
+    }
+    
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .feature-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+    
+    .feature-icon {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-top: 0.25rem;
+    }
+    
+    .feature-content h3 {
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    
+    .feature-content p {
+      color: var(--text-light);
+    }
+    
+    /* Testimonials */
+    .testimonials-container {
+      background: var(--white);
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .testimonial {
+      margin-bottom: 2rem;
+    }
+    
+    .testimonial:last-child {
+      margin-bottom: 0;
+    }
+    
+    .testimonial p {
+      font-size: 1.125rem;
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 1rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    .testimonial p::before {
+      content: '"';
+      font-size: 3rem;
+      color: var(--primary);
+      opacity: 0.2;
+      position: absolute;
+      left: -1rem;
+      top: -1rem;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    
+    .author-info h4 {
+      font-size: 1rem;
+      color: var(--text);
+    }
+    
+    .author-info p {
+      font-size: 0.875rem;
+      color: var(--text-light);
+      margin: 0;
+      padding: 0;
+    }
+    
+    .author-info p::before {
+      display: none;
+    }
+    
+    /* Contact Form */
+    .contact-form {
+      background: var(--white);
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 1px solid var(--gray);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .submit-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--text);
+      color: var(--white);
+      padding: 3rem 0;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .footer-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--white);
+    }
+    
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-links a {
+      color: var(--white);
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      opacity: 0.8;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .social-links a {
+      color: var(--white);
+      font-size: 1.25rem;
+      transition: opacity 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      opacity: 0.8;
+    }
+    
+    .copyright {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.875rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      header.hero h1 {
+        font-size: 2.25rem;
+      }
+      
+      header.hero p {
+        font-size: 1.125rem;
+      }
+      
+      .btn {
+        padding: 0.75rem 1.5rem;
+      }
+      
+      .btn-secondary {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+      
+      section {
+        padding: 3rem 0;
+      }
+      
+      .testimonials-container,
+      .contact-form {
+        padding: 2rem;
+      }
+      
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Maximize Your IT Budget With Unused Software License Resale</h1>
+      <p>SoftSell provides a secure, compliant marketplace to recover value from your unused software assets with minimal effort.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Sell Licenses Now</a>
+        <a href="#how-it-works" class="btn btn-secondary">How It Works</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="how-it-works" class="how-it-works">
+    <div class="container">
+      <div class="section-title">
+        <h2>Streamlined License Resale Process</h2>
+        <p>Our three-step process makes selling unused software licenses simple and secure.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-cloud-upload-alt"></i>
+          </div>
+          <h3>Submit License Details</h3>
+          <p>Securely upload your license information through our encrypted platform or API integration.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-search-dollar"></i>
+          </div>
+          <h3>Instant Valuation</h3>
+          <p>Receive a fair market valuation within hours based on current demand and license specifics.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-hand-holding-usd"></i>
+          </div>
+          <h3>Fast Payment</h3>
+          <p>Get paid via your preferred method within 3 business days after verification.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-choose-us">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Enterprises Trust SoftSell</h2>
+        <p>We provide the most secure and efficient platform for software license resale.</p>
+      </div>
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Enterprise-Grade Security</h3>
+            <p>Bank-level encryption and compliance with all major regulatory standards including GDPR and CCPA.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Rapid Transactions</h3>
+            <p>Average time from submission to payment is just 72 hours for verified licenses.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Optimal Pricing</h3>
+            <p>Our dynamic pricing engine ensures you get the best possible market value.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Dedicated Support</h3>
+            <p>24/7 customer support with dedicated account managers for enterprise clients.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>Trusted by Industry Leaders</h2>
+        <p>Hear from organizations that have recovered value with SoftSell.</p>
+      </div>
+      <div class="testimonials-container">
+        <div class="testimonial">
+          <p>SoftSell transformed our software asset management strategy. We recovered over $250,000 in the first quarter alone from licenses we didn't even realize we could monetize.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">JD</div>
+            <div class="author-info">
+              <h4>Jane Doe</h4>
+              <p>IT Director, Fortune 500 Technology Company</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p>The compliance assurance and seamless process made this a no-brainer for our procurement team. We've made SoftSell part of our standard software lifecycle management.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">JS</div>
+            <div class="author-info">
+              <h4>John Smith</h4>
+              <p>VP of Procurement, Global Financial Services</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Start Selling Today</h2>
+        <p>Complete the form below and our licensing specialists will contact you within one business day.</p>
+      </div>
+      <div class="contact-form">
+        <form id="license-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Business Email</label>
+            <input type="email" id="email" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="license-type">Software Vendor</label>
+            <select id="license-type" class="form-control" required>
+              <option value="">Select Vendor</option>
+              <option value="microsoft">Microsoft</option>
+              <option value="adobe">Adobe</option>
+              <option value="autodesk">Autodesk</option>
+              <option value="oracle">Oracle</option>
+              <option value="vmware">VMware</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="licenses">Estimated Number of Licenses</label>
+            <select id="licenses" class="form-control" required>
+              <option value="">Select Quantity</option>
+              <option value="1-10">1-10</option>
+              <option value="11-50">11-50</option>
+              <option value="51-100">51-100</option>
+              <option value="101-500">101-500</option>
+              <option value="500+">500+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Additional Details</label>
+            <textarea id="message" class="form-control" placeholder="Please include any relevant details about your licenses..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Request Valuation</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">SoftSell</div>
+        <div class="footer-links">
+          <a href="#how-it-works">How It Works</a>
+          <a href="#contact">Sell Licenses</a>
+          <a href="#">About Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 SoftSell Technologies. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+      // Form validation
+      const form = document.getElementById('license-form');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Basic validation
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const company = document.getElementById('company').value.trim();
+        const licenseType = document.getElementById('license-type').value;
+        const licenses = document.getElementById('licenses').value;
+        
+        if (!name || !email || !company || !licenseType || !licenses) {
+          alert('Please fill in all required fields.');
+          return;
+        }
+        
+        // Simulate form submission
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Processing...';
+        
+        // In a real implementation, you would send the data to your server here
+        setTimeout(() => {
+          alert(`Thank you, ${name}! Your valuation request has been received. Our team will contact you within 24 hours.`);
+          form.reset();
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Request Valuation';
+        }, 1500);
+      });
+    });
+  </script>
+</body>
+</html>
